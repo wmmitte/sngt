@@ -1,0 +1,29 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+#content {
+  height: 100%;
+}
+#content > md-content {
+  background-color: #eee;
+}
+
+.fg-red{
+    color:#f00;
+}
+
+.bg-red{
+    background-color:#f00;
+}
+
+
+fg-blue{
+    color:#00f;
+}
+
+.bg-blue{
+    background-color:#00f;
+}
+.pointer{
+    cursor : pointer;
+}

@@ -1,0 +1,36 @@
+<div class="w3-container">
+    <form name="form" style="
+          margin: auto;
+          width: 40%;
+          padding: 10px;
+    ">
+
+
+
+        <p> 
+            <label class="w3-label"> <i class="fa fa-user  fa-2x" ></i> Nom</label>
+            <input ng-model="post.nom_chauf" class="w3-input" type="text" required  style="text-transform: uppercase;">
+        </p>
+
+        <p> 
+            <label class="w3-label"> <i class="fa fa-user  fa-2x" ></i> Prénom</label>
+            <input ng-model="post.prenom_chauf" class="w3-input" type="text" required  style="text-transform:capitalize ;">
+        </p>
+
+        <p> 
+            <label class="w3-label"> <i class="fa fa-mobile fa-2x"></i> Téléphone</label>
+            <input ng-model="post.tel_chauf" class="w3-input" type="text" required>
+        </p>
+
+        <p> 
+            <label class="w3-label"><i class="fa fa-list-alt fa-2x" style="text-transform:capitalize ; "></i> Adresse</label>
+            <textarea ng-model="post.adresse_chauf" class="w3-input" type="text" required ></textarea>
+        </p>
+        
+        <p> 
+            <button class="w3-btn w3-black" ng-click="back();">Retour</button>
+            <button class="w3-btn w3-teal" ng-click="save();" ng-disabled="form.$invalid">Enregistrer</button>
+            <span class="error" ng-show="myValue"> Required!</span>
+        </p>
+    </form>
+</div>

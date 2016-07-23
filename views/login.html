@@ -1,0 +1,22 @@
+<div class="w3-container">
+    <form name="form" style="
+          margin: auto;
+          width: 60%;
+          padding: 10px;
+          ">
+        <p> 
+            <label class="w3-label">Login</label>
+            <input ng-model="identification.login" class="w3-input" type="text" required>
+        </p>
+        <p> 
+            <label class="w3-label">Password</label>
+            <input ng-model="identification.pass" class="w3-input" type="text" required>
+        </p>
+
+        
+         <p> 
+            <button class="w3-btn w3-black" ng-click="login();">connection</button>
+            <button class="w3-btn w3-teal" ng-click="inscription();" ng-disabled="formVoyage.$invalid">Save</button>
+        </p>
+    </form>
+</div>

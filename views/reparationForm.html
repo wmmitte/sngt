@@ -1,0 +1,40 @@
+<div class="w3-container">
+    <form name="form" style="
+          margin: auto;
+          width: 40%;
+          padding: 10px;
+          ">
+        
+        
+        <p> 
+            <label class="w3-label"><i class="fa fa-truck fa-2x"></i> Véhicule réparation</label>
+          
+            <select ng-model="postReparation.vehicule_rep"
+             ng-options="liste.id_veh as liste.immat_veh +' | '+ liste.marque_veh for liste in listeCamion" 
+             class="w3-input w3-ul w3-border" >
+             <option value="">Sélectionnez un camion</option> </select>
+         </p>
+
+         <md-select ng-model="size">
+          <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+        </md-select>
+
+        <p> 
+            <label class="w3-label"><i class="fa fa-list-alt fa-2x" ></i> Libélle</label>
+
+            <textarea ng-model="postReparation.libelle_rep" class="w3-input" type="text" required style="text-transform:capitalize ; "></textarea>
+        </p>
+
+        <p> 
+            <label class="w3-label"><i class="fa fa-wrench fa-2x"></i><i class="fa fa-usd"></i>  Frais de Réparation</label>
+            <input ng-model="postReparation.frais_rep" class="w3-input" type="text" required>
+        </p>
+
+
+        
+        <p> 
+            <button class="w3-btn w3-black" ng-click="backReparation();">Retour</button>
+            <button class="w3-btn w3-teal" ng-click="saveReparation();" ng-disabled="form.$invalid">Enregistrer</button>
+        </p>
+    </form>
+</div>

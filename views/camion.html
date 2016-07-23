@@ -1,0 +1,37 @@
+<div class="w3-container" style="padding: 10px">
+    <button class="w3-btn w3-green" ng-click="newCamion();">Ajouter un vehicule</button>
+
+
+    <div class="input-control text" style="float: right;">
+        <input type="text" ng-model="search" placeholder="Rechercher">
+    </div>
+</div>
+<div class="w3-container" style="padding: 10px">
+    <table class="w3-table w3-border w3-bordered w3-striped">
+        <tr>
+
+            <th>Code vehicules</th>
+            <th>Immatriculation</th>
+            <th>Marque</th>
+            <th>Date d'achat</th>
+            <th>Capacite</th>
+            <th>NombrePont</th>
+
+            <th></th>
+        </tr>
+        <tr ng-repeat="data in postCamion | filter:search">
+
+            <td>{{ data.code_veh}}</td>
+            <td>{{ data.immat_veh}}</td>
+            <td>{{ data.marque_veh}}</td>
+            <td>{{ data.date_achat_veh | date: 'dd MMM yyyy'}}</td>
+            <td>{{ data.capacite_veh}}</td>
+            <td>{{ data.nbre_pont_veh}}</td>
+
+            <td style="width: 250px"> 
+                <span class="fg-blue pointer"><i class="fa fa-edit fa-2x " ng-click="editCamion(data)" ></i></span>  &nbsp; 
+                <span class="fg-red pointer"><i class="fa fa-remove fa-2x" ng-click="removeCamion(data.id_veh,$event)" ></i></span> 
+            </td>
+        </tr>
+    </table>
+</div>

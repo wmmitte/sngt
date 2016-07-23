@@ -1,0 +1,44 @@
+<div class="w3-container">
+    <form name="form" style="
+          margin: auto;
+          width: 40%;
+          padding: 10px;
+          ">
+        <p> 
+            <label class="w3-label"><i class="fa fa-align-justify fa-2x" ></i> Immatriculation</label>
+            <input ng-model="postCamion.immat_veh" class="w3-input" type="text" required>
+        </p>
+         
+
+        <p> 
+            <label class="w3-label"><i class="fa fa-car fa-2x" ></i> Marque</label>
+            <input ng-model="postCamion.marque_veh" class="w3-input" type="text" required>
+        </p>
+           <p> 
+            <label class="w3-label"><i class="fa fa-tachometer fa-2x" ></i> Capacité</label>
+            <input ng-model="postCamion.capacite_veh" class="w3-input" type="text" required>
+        </p>
+
+        
+        <p> 
+            <label class="w3-label"><i class="fa fa-square fa-2x"></i> Nombre de pont </label>
+            <input ng-model="postCamion.nbre_pont_veh" class="w3-input" type="text" required>
+        </p>
+        
+         <p> 
+            <label class="w3-label"><i class="fa fa-calendar fa-2x" ></i> Date d'achat du véhicule</label>
+            <!-- <input ng-model="postCamion.date_achat_veh" class="w3-input" type="text" required> -->
+             <mdp-date-picker mdp-placeholder="Date" ng-model="postCamion.date_achat_veh"  mdp-format="DD/MM/YYYY" ></mdp-date-picker>
+        </p>
+        
+
+         
+
+        
+
+        <p> 
+            <button class="w3-btn w3-black" ng-click="backCamion();">Retour</button>
+            <button class="w3-btn w3-teal" ng-click="saveCamion();" ng-disabled="form.$invalid">Enregistrer</button>
+        </p>
+    </form>
+</div>

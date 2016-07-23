@@ -1,0 +1,50 @@
+<div class="w3-container" style="padding: 10px">
+
+    <button class="w3-btn w3-green" ng-click="newVoyage();">Ajouter un nouvel voyage</button>
+
+
+
+
+    <div class="input-control text" style="float: right;">
+        <input type="text" ng-model="search" placeholder="Rechercher...">
+    </div>
+</div>
+<div style="padding:15px;font-style: italic;font-weight:bold">
+    Liste des derniers voyages
+</div>
+<div class="w3-container" style="padding: 10px;max-height: 500px;overflow: auto;">
+    <table class="w3-table w3-border w3-bordered w3-striped">
+        <tr> 
+            <th>Date de depart </th>
+            <th>Vehicule</th> 
+            <th>Chauffeur</th>
+            <th>Depart </th>
+            <th>Destination</th> 
+            <th>Frais route CFA</th>
+            <th>Frais reparation CFA</th>
+            <th>Recette CFA</th>
+
+            <th></th>
+        </tr>
+        <tr ng-repeat="data in postVoyage | filter:search">
+
+
+            <td>{{ data.date_dep_voy  | brDateFilter | date:"dd MMM yyyy HH:mm" }}</td>
+            <td>{{ data.immat_veh}}-{{ data.marque_veh}}</td>
+            <td>{{ data.nom_chauf}} {{ data.prenom_chauf}}</td>
+            <td>{{ data.dep_voy}}</td>
+            <td>{{ data.dest_voy}}</td>
+            <td>{{ data.frais_voy}} </td>
+            <td>{{ data.reparation_voy }} </td>
+            <td>{{ data.recette_voy}}</td>
+
+
+            <td style="width: 250px">  
+                <span class="fg-blue pointer"><i class="fa fa-edit fa-2x " ng-click="editVoyage(data)" ></i></span>  &nbsp; 
+                <span class="fg-red pointer"><i class="fa fa-remove fa-2x" ng-click="removeVoyage(data.id_voy,$event)" ></i></span> 
+
+
+            </td>
+        </tr>
+    </table>
+</div>

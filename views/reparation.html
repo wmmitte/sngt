@@ -1,0 +1,37 @@
+<div class="w3-container" style="padding: 10px">
+    <button class="w3-btn w3-green" ng-click="addReparation();">Ajouter une nouvelle réparation</button>
+
+
+
+    <div class="input-control text" style="float: right;">
+        <input type="text" ng-model="search" placeholder="Recherche...">
+    </div>
+</div>
+<div class="w3-container" style="padding: 10px">
+    <table class="w3-table w3-border w3-bordered w3-striped">
+        <tr>
+            <th>Code réparation </th>
+            <th>Véhicule réparé</th>
+            <th>Libellé </th>
+            <th>Frais de réparation CFA</th>
+            <th>Date d'enregistrement</th>
+
+            <th></th>
+        </tr>
+        <tr ng-repeat="data in postReparation | filter:search">
+            <td>{{ data.code_rep}}</td>
+            <td>{{ data.immat_veh  }} - {{ data.marque_veh  }}</td>
+            <td>{{ data.libelle_rep}}</td>
+            <td>{{ data.frais_rep}} </td>
+            <td>{{data.date_enr | brDateFilter | date:"dd MMM yyyy HH:mm"  }}</td>
+
+
+
+            <td style="width: 250px"> 
+                <span class="fg-blue pointer"><i class="fa fa-edit fa-2x " ng-click="editReparation(data)" ></i></span>  &nbsp; 
+                <span class="fg-red pointer"><i class="fa fa-remove fa-2x" ng-click="removeReparation(data.id_rep,$event)" ></i></span> 
+
+            </td>
+        </tr>
+    </table>
+</div>

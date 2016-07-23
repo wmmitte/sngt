@@ -1,0 +1,77 @@
+<div class="w3-container">
+    <div style="padding:15px;font-style: italic;font-weight:bold">
+   Enregistrer/Modifier un voyage
+</div>
+    <form name="form" style="
+          margin: auto;
+          width: 40%;
+          padding: 10px;">
+
+
+        <div style="max-height: 500px;overflow: auto;"> 
+            <p> 
+                <label class="w3-label"><i class="fa fa-user  fa-2x" > </i> Chauffeur</label>
+
+
+                <select ng-model="postVoyage.chauffeur_voy" ng-options="liste.id_chauf as liste.code_chauf +' - '+ liste.nom_chauf +' '+liste.prenom_chauf   for liste in listeChauffeur" class="w3-input w3-border"  > <option value="">Selectionnez un chauffeur</option></select> 
+
+
+            </p>
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-truck fa-2x"></i>  Camion</label>
+
+
+                <select ng-model="postVoyage.vehicule_voy"  ng-options="liste.id_veh as liste.immat_veh +' | '+ liste.marque_veh for liste in listeCamion"  class="w3-input w3-border " ><option value="" class="w3-hover-red">Selectionnez un camion</option> </select>
+
+
+            </p>
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-calendar fa-2x" ></i> Date  de depart  
+                </label>
+            <mdp-date-picker mdp-placeholder="Date" ng-model="postVoyage.date_dep_voy"  mdp-format="DD/MM/YYYY" ></mdp-date-picker> 
+            </p> 
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-calendar fa-2x" ></i> Date d'arrivee   </label>
+
+            <mdp-date-picker mdp-placeholder="Date" ng-model="postVoyage.date_arr_voy" mdp-format="DD/MM/YYYY" ></mdp-date-picker> 
+
+
+            </p>  
+
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-map-marker fa-2x" ></i> Lieu de depart</label>
+                <input ng-model="postVoyage.dep_voy" class="w3-input" type="text" required style="text-transform:capitalize ; ">
+            </p> 
+
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-location-arrow fa-2x"></i></i>  Destination</label>
+                <input ng-model="postVoyage.dest_voy" class="w3-input" type="text" required style="text-transform:capitalize ; ">
+            </p> 
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-truck  fa-2x"></i><i class="fa fa-usd"></i> Frais de voyage</label>
+                <input ng-model="postVoyage.frais_voy" class="w3-input" type="text" required>
+            </p>
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-wrench  fa-2x"></i><i class="fa fa-usd"></i>  Frais de Reparation</label>
+                <input ng-model="postVoyage.reparation_voy" class="w3-input" type="text" required>
+            </p> 
+
+            <p> 
+                <label class="w3-label"><i class="fa fa-plane  fa-2x"></i><i class="fa fa-usd"></i> Recette de voyage</label>
+                <input ng-model="postVoyage.recette_voy" class="w3-input" type="text" required>
+            </p>    
+
+        </div>
+        <p> 
+            <button class="w3-btn w3-black" ng-click="backVoyage();">Retour</button>
+            <button class="w3-btn w3-teal" ng-click="saveVoyage();" ng-disabled="form.$invalid">Enregister</button>
+        </p>
+    </form>
+</div>

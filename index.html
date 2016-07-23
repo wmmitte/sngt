@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Simple Angular Resouce</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/w3.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/angular-material.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/mdPickers.min.css" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+
+
+    </head>
+    <body>
+
+        <div class="w3-container w3-teal">
+
+
+            <span style="display:inline-block;font-size:40px;height:60px;">
+                TRANSPORT <i class="fa fa-truck  fa-2x" ></i>
+            </span>  
+            <span style="font-size:14px;margin-left:15px;">
+                {{app.path}}
+            </span>  
+        </div>
+
+
+
+
+    <md-toolbar layout="row" class="md-whiteframe-z3" >
+        <section >
+
+            <md-menu>
+                <md-button md-menu-origin ng-click="$mdOpenMenu()" class="groupX right" ><i class="fa fa-pause fa-2x"></i> &nbsp;Voyage </md-button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/voyage" ><i class="fa fa-file-text-o"></i> Liste des voyages</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/voyf" ><i class="fa fa-plus"></i> &nbsp; Enregister un nouveau voyage</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/voyet" ><i class="fa fa-file-text-o"></i> &nbsp; Etat des voyages</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-menu>
+                <md-button md-menu-origin ng-click="$mdOpenMenu()" class="groupX left" ><i class="fa fa-wrench fa-2x"></i> &nbsp;Reparation</md-button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/reparation" ><i class="fa fa-file-text-o"></i> Liste</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/reparationForm" ><i class="fa fa-plus"></i> &nbsp; Ajouter</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+
+
+
+
+            <md-menu>
+                <md-button md-menu-origin ng-click="$mdOpenMenu()"><i class="fa fa-cog fa-2x"></i> &nbsp;Parametre </md-button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/camion" ><i class="fa fa-truck"></i> Camion</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button class="groupX middle"  ng-href="#/person" ><i class="fa fa-user"></i> &nbsp; Chauffeur</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+
+        </section>
+
+    </md-toolbar > 
+
+    <div ui-view></div>
+    <script src="libs/angular/angular.min.js" type="text/javascript"></script>
+    <script src="libs/angular-locale_fr-fr.js" type="text/javascript" ></script>
+    <script src="libs/angular-ui-router.js" type="text/javascript"></script>
+    <script src="libs/angular/angular-resource.min.js" type="text/javascript"></script>
+
+    <script  src="libs/angular/angular-animate.min.js" type="text/javascript"></script>
+    <script  src="libs/angular/angular-aria.min.js" type="text/javascript"></script>
+    <script  src="libs/angular/angular-messages.min.js" type="text/javascript"></script>
+    <script src="libs/angular-material.min.js" type="text/javascript"></script>
+
+    <script src="libs/jquery.min.js" type="text/javascript" ></script>
+    <script src="libs/moment.min.js" type="text/javascript" ></script>
+    <script src="libs/mdPickers.min.js" type="text/javascript"></script>
+    <script src="libs/index.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/service.js" type="text/javascript"></script>
+    <script src="js/controller.js" type="text/javascript"></script>
+</body>
+</html>

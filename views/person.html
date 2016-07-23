@@ -1,0 +1,51 @@
+<div class="w3-container" style="padding: 10px">
+    <button class="w3-btn w3-green" ng-click="add();">Ajouter un nouveau chauffeur</button>
+
+
+
+    <div class="input-control text" style="float: right;">
+        <input type="text" ng-model="search" placeholder="Recherche...">
+    </div>
+</div>
+
+
+
+
+
+<div class="w3-container" style="padding: 10px">
+    <table class="w3-table w3-border w3-bordered w3-striped ">
+        <tr>
+
+            <th>Code chauffeur</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Téléphone</th>
+            <th>Adresse</th>
+
+
+
+
+
+
+            <th></th>
+        </tr>
+        <tr ng-repeat="data in datas | filter: search" >
+
+            <td>{{ data.code_chauf}}</td>
+            <td>{{ data.nom_chauf}}</td>
+            <td>{{ data.prenom_chauf}}</td>
+            <td>{{ data.tel_chauf}}</td>
+            <td>{{ data.adresse_chauf}}</td>
+
+
+
+
+
+            <td style="width: 250px"> 
+                <span class="fg-blue pointer"><i class="fa fa-edit fa-2x " ng-click="edit(data)" ></i></span>  &nbsp; 
+                <span class="fg-red pointer"><i class="fa fa-remove fa-2x" ng-click="remove($event,data.id_chauf)" ></i></span> 
+
+            </td>
+        </tr>
+    </table>
+</div>
